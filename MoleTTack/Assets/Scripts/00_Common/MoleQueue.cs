@@ -6,6 +6,8 @@ using System.Linq;
 public class MoleQueue
 {
     private List<Mole> queue;
+    public int Count { get { return queue.Count; } }
+    public bool isEmpty { set { setEmpty(); } }
 
     // »ý¼ºÀÚ
     public MoleQueue()
@@ -56,7 +58,7 @@ public class MoleQueue
         queue.Sort((x, y) => { return x.getSpawnTime().CompareTo(y.getSpawnTime()); });
     }
 
-    public object Dequeue()
+    public Mole Dequeue()
     {
         Mole mole = queue.First<Mole>();
         queue.RemoveAt(0);
@@ -64,7 +66,7 @@ public class MoleQueue
         return mole;
     }
 
-    public bool isEmpty()
+    public bool setEmpty()
     {
         if (queue.Count == 0)
             return true;

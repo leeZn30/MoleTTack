@@ -285,6 +285,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BombMole
       objectReference: {fileID: 0}
+    - target: {fileID: 8006709669432781472, guid: cd9d967d3dd78804a8828799ea5d53ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd9d967d3dd78804a8828799ea5d53ee, type: 3}
 --- !u!1 &448537879
@@ -629,6 +633,7 @@ MonoBehaviour:
   - {fileID: 1741357402}
   - {fileID: 61992138}
   - {fileID: 802096468}
+  mole: {fileID: 463075801}
   holes:
   - {fileID: 6016114231709415705}
   - {fileID: 6016114231709415704}
@@ -639,6 +644,7 @@ MonoBehaviour:
   - {fileID: 6016114231709415699}
   - {fileID: 6016114231709415698}
   - {fileID: 6016114231709415697}
+  holePossible: 010101010101010101
 --- !u!1 &802096468 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8006709669432781472, guid: cd9d967d3dd78804a8828799ea5d53ee, type: 3}
@@ -951,6 +957,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalMole (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8006709669432781472, guid: 2864f2af52b3f50498e83c3705bd6587, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2864f2af52b3f50498e83c3705bd6587, type: 3}
 --- !u!1001 &1439196355
@@ -960,6 +970,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2718494416231752919, guid: 2864f2af52b3f50498e83c3705bd6587, type: 3}
+      propertyPath: m_Animation
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 7933921253859973006, guid: 2864f2af52b3f50498e83c3705bd6587, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1314,6 +1328,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpecialMole
       objectReference: {fileID: 0}
+    - target: {fileID: 8006709669432781472, guid: a9bab153d27c04f4bbfb1aeb692b32b8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a9bab153d27c04f4bbfb1aeb692b32b8, type: 3}
 --- !u!1 &1741357402 stripped
@@ -1412,6 +1430,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: NormalMole (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8006709669432781472, guid: 2864f2af52b3f50498e83c3705bd6587, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2864f2af52b3f50498e83c3705bd6587, type: 3}
 --- !u!1 &1859965035 stripped
@@ -1456,26 +1478,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3529378029408552115, guid: 211e2ba80b0888d45b1fcd6cb2c20207, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 5430788762048725419, guid: 211e2ba80b0888d45b1fcd6cb2c20207, type: 3}
+      propertyPath: m_LocalScale.x
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6016114231754708106, guid: 211e2ba80b0888d45b1fcd6cb2c20207, type: 3}
       propertyPath: m_Name
       value: Stage
       objectReference: {fileID: 0}
-    - target: {fileID: 6016114231754708106, guid: 211e2ba80b0888d45b1fcd6cb2c20207, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6016114231754708108, guid: 211e2ba80b0888d45b1fcd6cb2c20207, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6016114231754708108, guid: 211e2ba80b0888d45b1fcd6cb2c20207, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 142eacf0ca95f5a4a8e0ddd1631ff79f, type: 2}
     - target: {fileID: 6016114231754708110, guid: 211e2ba80b0888d45b1fcd6cb2c20207, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
