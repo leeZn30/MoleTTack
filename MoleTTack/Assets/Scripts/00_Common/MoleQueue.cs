@@ -66,7 +66,7 @@ public class MoleQueue
         return mole;
     }
 
-    public bool setEmpty()
+    private bool setEmpty()
     {
         if (queue.Count == 0)
             return true;

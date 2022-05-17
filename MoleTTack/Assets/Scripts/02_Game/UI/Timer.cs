@@ -31,7 +31,7 @@ public class Timer : MonoBehaviour
         if (GameManager.Instance.isGameStart)
         {
 
-            if (slider.value >= 0)
+            if (slider.value > 0)
             {
                 slider.value -= Time.deltaTime;
             }
