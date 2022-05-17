@@ -33,9 +33,12 @@ public class MoleManager : Singleton<MoleManager>
 
     void Update()
     {
-        if (moleQueue.Count != 0)
+        if (GameManager.Instance.isGameStart)
         {
-            locateMole(moleQueue.Dequeue().gameObject);
+            if (moleQueue.Count != 0)
+            {
+                locateMole(moleQueue.Dequeue().gameObject);
+            }
         }
 
     }

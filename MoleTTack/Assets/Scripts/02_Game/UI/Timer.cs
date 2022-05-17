@@ -20,12 +20,6 @@ public class Timer : MonoBehaviour
         slider.value = gameTime;
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        //timeRunning();
-    }
-
     private void Update()
     {
         timeRunning();
@@ -37,12 +31,14 @@ public class Timer : MonoBehaviour
         if (GameManager.Instance.isGameStart)
         {
 
-            if (slider.value > 0)
+            if (slider.value >= 0)
             {
                 slider.value -= Time.deltaTime;
             }
             else
-                GameManager.Instance.isGameStart = false;
+            {
+                GameManager.Instance.finishGame();
+            }
         }
 
     }

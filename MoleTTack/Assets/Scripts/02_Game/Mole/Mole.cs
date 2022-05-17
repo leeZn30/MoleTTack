@@ -12,12 +12,13 @@ public class Mole : MonoBehaviour
     [SerializeField] protected float upDownTime = 0.5f;
 
     [Header("Score")]
-    [SerializeField] protected int score;
+    public int score;
 
     [Header("variables")]
     public bool isReady;
     public bool isRunning;
     public int holeIndex;
+    protected bool isTouched;
 
     [Header("Positions")]
     public Vector3 startPos;
@@ -29,7 +30,15 @@ public class Mole : MonoBehaviour
 
     private void Update()
     {
-        StartCoroutine(spawnMole());
+        if (GameManager.Instance.isGameStart)
+        {
+            StartCoroutine(spawnMole());
+            detectTouch();
+        }
+        else
+        {
+            StopAllCoroutines();
+        }
     }
 
 
@@ -37,6 +46,8 @@ public class Mole : MonoBehaviour
     {
         if (!isRunning)
         {
+            isTouched = false;
+
             isRunning = true;
             // 일정 시간마다 스폰
             yield return new WaitForSecondsRealtime(spawnTime);
@@ -109,15 +120,55 @@ public class Mole : MonoBehaviour
     {
         if (isReady)
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
-            RaycastHit hit;
-            float maxDistance = 100;
-
-
-            if (Physics.Raycast(ray, out hit, maxDistance))
+            if (Input.touchCount != 0)
             {
-                Debug.Log("Mole hitted!");
+                Touch touch = Input.GetTouch(0);
+
+                if (touch.phase == TouchPhase.Began)
+                    Debug.Log(touch);
+
+                Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
+                RaycastHit hit;
+                float maxDistance = 100;
+
+
+                if (Physics.Raycast(ray, out hit, maxDistance))
+                {
+
+                    if (hit.collider.tag == "Mole")
+                    {
+                        Debug.Log("Mole hitted!");
+                    }
+                }
             }
         }
     }
+
+    public void calltouched()
+    {
+        beeingTouched();
+    }
+
+    protected virtual void beeingTouched()
+    {
+        isReady = false;
+        setSpawnTime();
+
+        MoleManager.Instance.addMole(this);
+        MoleManager.Instance.setHole(holeIndex);
+
+        isRunning = false;
+
+        StopAllCoroutines();
+    }
+
+    private void OnMouseDown()
+    {
+        if (isReady && !isTouched)
+        {
+            GameManager.Instance.addScore(score);
+            beeingTouched();
+        }
+    }
+
 }

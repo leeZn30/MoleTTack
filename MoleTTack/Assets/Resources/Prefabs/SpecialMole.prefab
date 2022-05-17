@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 4899810965489210480}
   - component: {fileID: 6189795953120932569}
   - component: {fileID: 7470863446481838569}
-  - component: {fileID: 293619891147371869}
   m_Layer: 0
   m_Name: Ear
-  m_TagString: Untagged
+  m_TagString: Mole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -82,19 +81,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &293619891147371869
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3688692167513136278}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4018051074134482001
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,10 +92,9 @@ GameObject:
   - component: {fileID: 5623444856267473100}
   - component: {fileID: 5751548261857315860}
   - component: {fileID: 5618420153677192783}
-  - component: {fileID: 8148364660124141990}
   m_Layer: 0
   m_Name: Ear
-  m_TagString: Untagged
+  m_TagString: Mole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,19 +162,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &8148364660124141990
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4018051074134482001}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4593682239535028250
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,10 +173,9 @@ GameObject:
   - component: {fileID: 3150330757032974719}
   - component: {fileID: 6828232881209197354}
   - component: {fileID: 3064307266860369143}
-  - component: {fileID: 241861690943198271}
   m_Layer: 0
   m_Name: Body
-  m_TagString: Untagged
+  m_TagString: Mole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -272,20 +243,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &241861690943198271
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4593682239535028250}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8006709669432781472
 GameObject:
   m_ObjectHideFlags: 0
@@ -296,9 +253,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7933921253859973006}
   - component: {fileID: -7490396183190602084}
+  - component: {fileID: 5859460345267176459}
+  - component: {fileID: 4833069587921294620}
   m_Layer: 0
   m_Name: SpecialMole
-  m_TagString: Untagged
+  m_TagString: Mole
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -338,3 +297,36 @@ MonoBehaviour:
   upDownTime: 0.5
   score: 200
   isReady: 0
+  isRunning: 0
+  holeIndex: 0
+  startPos: {x: 0, y: 0, z: 0}
+--- !u!54 &5859460345267176459
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8006709669432781472}
+  serializedVersion: 2
+  m_Mass: 0.0000001
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &4833069587921294620
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8006709669432781472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.9857187
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.0025629997, z: 0}

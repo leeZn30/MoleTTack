@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -9,24 +10,40 @@ public class GameManager : Singleton<GameManager>
     public float gameTime;
 
     [Header("Score")]
-    [SerializeField] private int score;
+    [SerializeField] private int Score;
+
+    [Header("Objects")]
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private TextMeshProUGUI endPanel;
 
     private void Awake()
     {
         isGameStart = true;
-        score = 0;
+        Score = 0;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-        
+        scoreText.text = Score.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void finishGame()
     {
-        
+        isGameStart = false;
+
+        endPanel.transform.parent.gameObject.SetActive(true);
+        endPanel.text = "Your Score\n" + Score;
+
+        if (PlayerPrefs.GetInt("PlayerScore") < Score)
+            PlayerPrefs.SetInt("PlayerScore", Score);
+    }
+
+    public void addScore(int score)
+    {
+        int sum = Score + score;
+
+        if (Score >= 0 && sum >= 0)
+            Score += score;
     }
 
     

@@ -14,4 +14,5 @@ public class SpecialMole : Mole
     {
         spawnTime = Random.Range(15.0f, 30.0f);
     }
+
 }
