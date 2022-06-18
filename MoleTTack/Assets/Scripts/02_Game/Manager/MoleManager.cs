@@ -63,14 +63,47 @@ public class MoleManager : Singleton<MoleManager>
 
         mole.transform.position = location;
         mole.GetComponent<Mole>().startPos = location;
+
+        spawnMoleProcess();
+    }
+
+    private void spawnMoleProcess()
+    {
+        mole.GetComponent<Mole>().callSpawnMole();
+    }
+
+    private List<int> initHolePossible()
+    {
+        List<int> holeList = new List<int>();
+
+        // 현재 false인 곳 빼기
+        for (int i=0; i < holePossible.Length; i++)
+        {
+            if (holePossible[i])
+            {
+                holeList.Add(i);
+            }
+        }
+
+        return holeList;
     }
 
     private int findPossibleHole()
     {
+        /**
+        List<int> holeList = initHolePossible();
+
+        int index = Random.Range(0, holeList.Count);
+
+        Debug.Log("find hole: " + holeList[index]);
+
+        return holeList[index];
+        **/
 
         while (true)
         {
             int index = Random.Range(0, 9); // index 또 안 빈 곳 뽑으면 안되게 > 너무 에반데
+
 
             if (holePossible[index])
             {

@@ -32,7 +32,7 @@ public class Mole : MonoBehaviour
     {
         if (GameManager.Instance.isGameStart)
         {
-            StartCoroutine(spawnMole());
+            //StartCoroutine(spawnMole());
             detectTouch();
         }
         else
@@ -41,6 +41,10 @@ public class Mole : MonoBehaviour
         }
     }
 
+    public void callSpawnMole()
+    {
+        StartCoroutine(spawnMole());
+    }
 
     protected IEnumerator spawnMole()
     {
