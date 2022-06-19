@@ -70,22 +70,6 @@ public class MoleManager : Singleton<MoleManager>
         mole.GetComponent<Mole>().callSpawnMole();
     }
 
-    private List<int> initHolePossible()
-    {
-        List<int> holeList = new List<int>();
-
-        // 현재 false인 곳 빼기
-        for (int i=0; i < holePossible.Length; i++)
-        {
-            if (holePossible[i])
-            {
-                holeList.Add(i);
-            }
-        }
-
-        return holeList;
-    }
-
     private int findPossibleHole()
     {
 
