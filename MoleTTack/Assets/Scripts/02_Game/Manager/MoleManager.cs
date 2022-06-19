@@ -9,7 +9,6 @@ public class MoleManager : Singleton<MoleManager>
 
     [Header("두더지")]
     [SerializeField] List<GameObject> moles;
-    [SerializeField] GameObject mole;
 
     [Header("Holes")]
     [SerializeField] List<GameObject> holes;
@@ -24,7 +23,6 @@ public class MoleManager : Singleton<MoleManager>
             moleQueue.Enqueue(m);
         }
 
-        //moleQueue.Enqueue(mole.GetComponent<Mole>());
     }
 
     void Start()
@@ -64,10 +62,10 @@ public class MoleManager : Singleton<MoleManager>
         mole.transform.position = location;
         mole.GetComponent<Mole>().startPos = location;
 
-        spawnMoleProcess();
+        spawnMoleProcess(mole);
     }
 
-    private void spawnMoleProcess()
+    private void spawnMoleProcess(GameObject mole)
     {
         mole.GetComponent<Mole>().callSpawnMole();
     }
@@ -90,19 +88,10 @@ public class MoleManager : Singleton<MoleManager>
 
     private int findPossibleHole()
     {
-        /**
-        List<int> holeList = initHolePossible();
-
-        int index = Random.Range(0, holeList.Count);
-
-        Debug.Log("find hole: " + holeList[index]);
-
-        return holeList[index];
-        **/
 
         while (true)
         {
-            int index = Random.Range(0, 9); // index 또 안 빈 곳 뽑으면 안되게 > 너무 에반데
+            int index = Random.Range(0, 9);
 
 
             if (holePossible[index])

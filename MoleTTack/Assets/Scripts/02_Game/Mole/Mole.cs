@@ -32,7 +32,6 @@ public class Mole : MonoBehaviour
     {
         if (GameManager.Instance.isGameStart)
         {
-            //StartCoroutine(spawnMole());
             detectTouch();
         }
         else
